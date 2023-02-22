@@ -1,8 +1,9 @@
 # Calendar View
+[![](https://jitpack.io/v/akamaccio/CalendarView.svg)](https://jitpack.io/#akamaccio/CalendarView)\
 This is a calendar view widget.
 
 ## Dependencies
-This widget uses [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).\
+This widget uses [Java Time APIs](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).\
 Step 1. Add in you **build.gradle** file the following code
 ```
 compileOptions {
