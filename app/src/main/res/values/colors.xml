@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="mmc_transparent">#00FFFF00</color>
+
+    <color name="calendar_day_bg_disabled">@color/dirty_white</color>
+    <color name="calendar_day_bg_selected">@color/cyan</color>
+
+    <color name="calendar_day_text_unselected">@color/black</color>
+    <color name="calendar_day_text_selected">@color/white</color>
+
+    <color name="cyan">#219BD7</color>
+    <color name="dirty_white">#D7D4DC</color>
+    <color name="grey_1">#bcbec0</color>
+    <color name="grey_2">#e5e6e7</color>
+</resources>

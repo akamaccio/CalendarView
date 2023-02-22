@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MmCalendarView">
+        <attr name="mmcv_arrow_left" format="reference"/>
+        <attr name="mmcv_arrow_right" format="reference"/>
+        <attr name="mmcv_show_other_dates" format="boolean"/>
+        <attr name="mmcv_text_month_size" format="dimension"/>
+        <attr name="mmcv_text_week_days_size" format="dimension"/>
+        <attr name="mmcv_text_day_size" format="dimension"/>
+        <attr name="mmcv_text_day_color" format="color"/>
+        <attr name="mmcv_text_header_color" format="color"/>
+        <attr name="mmcv_min_date" format="string"/>
+        <attr name="mmcv_max_date" format="string"/>
+        <attr name="mmcv_first_day_of_week" format="enum">
+            <enum name="Mon" value="0"/>
+            <enum name="Tue" value="1"/>
+            <enum name="Wed" value="2"/>
+            <enum name="Thu" value="3"/>
+            <enum name="Fri" value="4"/>
+            <enum name="Sat" value="5"/>
+            <enum name="Sun" value="6"/>
+        </attr>
+    </declare-styleable>
+</resources>
