@@ -53,26 +53,73 @@ Add `MmCalendarView` into your layouts or view hierarchy.
 ```
 Set the right and left arrows and, optionally, the other attributes:
 
-* `mmcv_show_other_dates`: show the dates out of the current month (if not set, the outer dates are not shown)
-* `mmcv_min_date`: the calendar min date with _yyyyMMdd_ format (if not set, the first day of the current month is set)
-* `mmcv_max_date`: the calendar max date with _yyyyMMdd_ format (if not set, the current date set)
-* `mmcv_first_day_of_week`: the first day of week (if not set, the default locale value will be set)
-* `mmcv_text_month_size`: the month and year text size (if not set, the default color is 24sp)
-* `mmcv_text_week_days_size`: the week days text size (if not set, the default color is 16sp)
-* `mmcv_text_header_color`: the month, year and week days text color (if not set, the default color is black)
-* `mmcv_text_day_size`: the calendar day text size (if not set, the default color is 18sp)
-* `mmcv_text_day_color`: the calendar day text color (if not set, the default color is black)
+* `mmcv_show_other_dates`: show the dates out of the current month (by default, the outer dates are not shown)
+* `mmcv_min_date`: the calendar min date with _yyyyMMdd_ format (the default value is the first day of the current month)
+* `mmcv_max_date`: the calendar max date with _yyyyMMdd_ format (the default value is the current date)
+* `mmcv_first_day_of_week`: the first day of week (the default value is the default locale value)
+* `mmcv_text_month_size`: the month and year text size (the default color is 24sp)
+* `mmcv_text_week_days_size`: the week days text size (the default color is 16sp)
+* `mmcv_text_header_color`: the month, year and week days text color (the default color is black)
+* `mmcv_text_day_size`: the calendar day text size (the default color is 18sp)
+* `mmcv_text_day_color`: the calendar day text color (the default color is black)
 
 The first 4 attributes can be set programmatically.\
 The other parameters that can be optionally set are:
 
-* the year and month formatter
-* the days of week formatter
-* the calendar day formatter
+* the year and month text formatter
+* the days of week text formatter
+* the calendar day text formatter
 * the date on click listener
 * the date on long click listener
 * the month and year click listener
 * the month changed listener
+
+**To apply the parameters change the `build()` method must be called.**
+```
+ mainBinding.calendarView.apply {
+    minDate = LocalDate.of(2018, 1, 1)
+    maxDate = LocalDate.now()
+    showOtherDates = true
+    firstDayOfWeek = DayOfWeek.SATURDAY
+    build()
+}
+```
+
+## Relevant methods
+```
+/**
+* This method scrolls the calendar to the provided [Temporal].
+* @param temporal The temporal reference.
+* @param smoothly <code>TRUE</code> if the scroll must be smooth, <code>FALSE</code> (default) otherwise.
+*/
+fun moveTo(temporal : Temporal, smoothly : Boolean = false)
+
+/**
+* This method refreshed all calendar.
+* This method has a high computing cost and must be used just in case many calendar items has been updated.
+* Use [notifyCalendarItemsChanged] instead.
+*/
+fun notifyCalendarChanged()
+
+/**
+* This method updated the provided [Temporal] items (e.g. [LocalDate] and [YearMonth]).
+* @param items The list of temporal items to update.
+*/
+fun <T : Temporal> notifyCalendarItemsChanged(vararg items : T)
+    
+/**
+* This method checks if the provided [LocalDate] is withing the min and max dates.
+* @param localDate The local date to check.
+* @return <code>TRUE</code> if the provided [LocalDate] is withing the min and max dates, <code>FALSE</code> otherwise.
+*/
+fun isInRange(localDate: LocalDate) : Boolean
+```
+
+## Decorators
+
+The widget can be enriched via [decorators](https://github.com/akamaccio/CalendarView/blob/master/mmcalendarview/src/main/java/net/akamaccio/widget/MmCalendarDayDecorator.kt) which allow to change the calendar day element style and content under defined conditions.
+
+**This feature with click listeners and calendar notification change methods allow to implement the calendar dates selection paradigm.**
 
 
 ## Known Issue
