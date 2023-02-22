@@ -111,7 +111,7 @@ fun <T : Temporal> notifyCalendarItemsChanged(vararg items : T)
 /**
 * This method checks if the provided [LocalDate] is withing the min and max dates.
 * @param localDate The local date to check.
-* @return <code>TRUE</code> if the provided [LocalDate] is withing the min and max dates, <code>FALSE</code> otherwise.
+* @return TRUE if the provided [LocalDate] is withing the min and max dates, FALSE otherwise.
 */
 fun isInRange(localDate: LocalDate) : Boolean
 ```
