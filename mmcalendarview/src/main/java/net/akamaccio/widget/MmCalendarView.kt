@@ -56,7 +56,6 @@ class MmCalendarView(
             minDate = LocalDate.ofEpochDay(source.readLong())
             maxDate = LocalDate.ofEpochDay(source.readLong())
             currentMonth = YearMonth.parse(source.readString())
-            //currentMonth.rangeTo()
             showOtherDates = source.readString().toBoolean()
         }
 
