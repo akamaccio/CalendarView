@@ -276,7 +276,7 @@ class MmCalendarView(
     /**
      * This method scrolls the calendar to the provided [Temporal].
      * @param temporal The temporal reference.
-     * @param smoothly <code>TRUE</code> if the scroll must be smooth, <code>FALSE</code> (default) otherwise.
+     * @param smoothly TRUE if the scroll must be smooth, FALSE (default) otherwise.
      */
     fun moveTo(temporal : Temporal, smoothly : Boolean = false){
         adapter.indexOf(temporal)?.let { position ->
@@ -294,7 +294,7 @@ class MmCalendarView(
     fun notifyCalendarChanged() = adapter.notifyDataSetChanged()
 
     /**
-     * This method updated the provided {@link Temporal} items.
+     * This method updated the provided [Temporal] items (e.g. [LocalDate] and [YearMonth]).
      * @param items The list of temporal items to update.
      */
     fun <T : Temporal> notifyCalendarItemsChanged(vararg items : T){
@@ -302,9 +302,9 @@ class MmCalendarView(
     }
 
     /**
-     * This method checks if the provided {@link LocalDate} is withing the min and max dates.
+     * This method checks if the provided [LocalDate] is withing the min and max dates.
      * @param localDate The local date to check.
-     * @return <code>TRUE</code> if the provided {@link LocalDate} is withing the min and max dates, <code>FALSE</code> otherwise.
+     * @return TRUE if the provided [LocalDate] is withing the min and max dates, FALSE otherwise.
      */
     fun isInRange(localDate: LocalDate) : Boolean {
         return localDate == minDate || localDate == maxDate

@@ -107,7 +107,6 @@ class MainActivity : AppCompatActivity() {
                 maxDate = LocalDate.now()
                 showOtherDates = true
                 firstDayOfWeek = DayOfWeek.SATURDAY
-
             }
             //add decorators
             decorators.add(object : MmCalendarDayDecorator{
