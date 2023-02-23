@@ -127,6 +127,7 @@ The widget can be enriched via [decorators](https://github.com/akamaccio/Calenda
 
 **This feature with click listeners and calendar notification change methods allow to implement the calendar dates selection paradigm.**
 
+Some decorator examples are available in the [MainActivity.kt](https://github.com/akamaccio/CalendarView/blob/master/app/src/main/java/it/matmacci/calendarview/MainActivity.kt) file.
 
 ## Known Issue
 Both widget width and height cannot be set to wrap_content cause of ViewPager2 usage.
