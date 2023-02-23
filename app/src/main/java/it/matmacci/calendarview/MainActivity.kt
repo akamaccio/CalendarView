@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import it.matmacci.calendarview.databinding.ActivityMainBinding
-import net.akamaccio.widget.Extensions.Companion.monthsBetween
 import net.akamaccio.widget.Extensions.Companion.onRange
 import net.akamaccio.widget.MmCalendarDayDecorator
 import java.time.DayOfWeek
@@ -50,10 +49,10 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 else -> { //start and end dates available -> clear selection and add new start
-                    val months = selectedDates.first().monthsBetween(selectedDates.last())
+                    val dates = arrayOf(localDate, *selectedDates.toTypedArray())
                     selectedDates.clear()
                     selectedDates.add(localDate)
-                    mainBinding.calendarView.notifyCalendarItemsChanged(localDate, *months.toTypedArray())
+                    mainBinding.calendarView.notifyCalendarItemsChanged(*dates)
                 }
             }
         }
