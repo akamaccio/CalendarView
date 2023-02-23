@@ -39,7 +39,7 @@ dependencies {
 ```
 ## Usage
 Add `MmCalendarView` into your layouts or view hierarchy.
-```
+```kotlin
 <net.akamaccio.widget.MmCalendarView
     android:id="@+id/calendar_view"
     android:layout_width="0dp"
@@ -76,7 +76,7 @@ The other parameters that can be optionally set are:
 * the month changed listener
 
 **To apply the parameters change the `build()` method must be called.**
-```
+```kotlin
  mainBinding.calendarView.apply {
     minDate = LocalDate.of(2018, 1, 1)
     maxDate = LocalDate.now()
