@@ -87,8 +87,8 @@ The other parameters that can be optionally set are:
 ```
 
 ## Relevant methods
-```
-/**kotlin
+```kotlin
+/**
 * This method scrolls the calendar to the provided [Temporal].
 * @param temporal The temporal reference.
 * @param smoothly <code>TRUE</code> if the scroll must be smooth, <code>FALSE</code> (default) otherwise.
