@@ -3,8 +3,9 @@
 This is a calendar view widget.
 
 ## Dependencies
-This widget uses [Java Time APIs](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).\
-Step 1. Add in you **build.gradle** file the following code
+This widget uses [Java Time APIs](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) via via Java 8+ API desugaring for backward compatibility since these classes were added in Java 8.\
+This section is required if your App's `minSdkVersion` is below **26** ONLY. In the other case jump to [Installation section](#installation).\
+Step 1. Add in you app **build.gradle** file the following code
 ```
 compileOptions {
     // Enable support for the new language APIs
@@ -12,6 +13,10 @@ compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
 }
+kotlinOptions {
+    // For Kotlin projects only
+    jvmTarget = "1.8"
+  }
 ```
 Step 2. Add the dependency
 ```
